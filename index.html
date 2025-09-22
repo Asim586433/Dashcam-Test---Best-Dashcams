@@ -169,22 +169,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 200px;
+            height: 100vh;
             font-size: 1.2rem;
+            flex-direction: column;
         }
 
         .spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
             border-left-color: #1a2a6c;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             animation: spin 1s linear infinite;
-            margin-right: 10px;
+            margin-bottom: 20px;
         }
 
         @keyframes spin {
             to { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
         }
 
         /* Responsive Design */
@@ -204,68 +209,77 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1 id="headline">Best Dashcams for 2025</h1>
-        <p id="subtitle">Find the perfect dashcam for your vehicle</p>
-    </header>
-
-    <div class="container">
-        <section class="intro">
-            <h2 id="intro-title">Why You Need a Dashcam</h2>
-            <p id="intro-text">Dashcams provide security and peace of mind while driving. They record your journeys, protect you from insurance fraud, and capture unexpected events on the road.</p>
-        </section>
-
-        <section class="products">
-            <div class="product-card">
-                <div class="product-image">📹</div>
-                <div class="product-content">
-                    <h3 id="product1-title">Premium Dashcam Pro</h3>
-                    <p id="product1-desc">High-resolution recording with night vision and GPS tracking.</p>
-                    <ul class="product-features">
-                        <li id="product1-feature1">4K Ultra HD Recording</li>
-                        <li id="product1-feature2">Night Vision Capability</li>
-                        <li id="product1-feature3">Built-in GPS</li>
-                        <li id="product1-feature4">Wi-Fi Connectivity</li>
-                    </ul>
-                    <a href="#" id="product1-cta" class="cta-button">Buy Now</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🚗</div>
-                <div class="product-content">
-                    <h3 id="product2-title">Compact Dashcam Mini</h3>
-                    <p id="product2-desc">Discreet design with excellent video quality and easy installation.</p>
-                    <ul class="product-features">
-                        <li id="product2-feature1">1080p Full HD</li>
-                        <li id="product2-feature2">Wide-Angle Lens</li>
-                        <li id="product2-feature3">Loop Recording</li>
-                        <li id="product2-feature4">Motion Detection</li>
-                    </ul>
-                    <a href="#" id="product2-cta" class="cta-button">Buy Now</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🛡️</div>
-                <div class="product-content">
-                    <h3 id="product3-title">Dual Lens Dashcam</h3>
-                    <p id="product3-desc">Front and rear recording for complete coverage of your vehicle.</p>
-                    <ul class="product-features">
-                        <li id="product3-feature1">Dual 1080p Cameras</li>
-                        <li id="product3-feature2">Parking Mode</li>
-                        <li id="product3-feature3">G-Sensor</li>
-                        <li id="product3-feature4">Super Capacitor</li>
-                    </ul>
-                    <a href="#" id="product3-cta" class="cta-button">Buy Now</a>
-                </div>
-            </div>
-        </section>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading">
+        <div class="spinner"></div>
+        <span>Detecting your location...</span>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Dashcam Test. <span id="footer-text">All rights reserved.</span></p>
-    </footer>
+    <!-- Main Content (initially hidden) -->
+    <div id="mainContent" class="hidden">
+        <header>
+            <h1 id="headline">Best Dashcams for 2025</h1>
+            <p id="subtitle">Find the perfect dashcam for your vehicle</p>
+        </header>
+
+        <div class="container">
+            <section class="intro">
+                <h2 id="intro-title">Why You Need a Dashcam</h2>
+                <p id="intro-text">Dashcams provide security and peace of mind while driving. They record your journeys, protect you from insurance fraud, and capture unexpected events on the road.</p>
+            </section>
+
+            <section class="products">
+                <div class="product-card">
+                    <div class="product-image">📹</div>
+                    <div class="product-content">
+                        <h3 id="product1-title">Premium Dashcam Pro</h3>
+                        <p id="product1-desc">High-resolution recording with night vision and GPS tracking.</p>
+                        <ul class="product-features">
+                            <li id="product1-feature1">4K Ultra HD Recording</li>
+                            <li id="product1-feature2">Night Vision Capability</li>
+                            <li id="product1-feature3">Built-in GPS</li>
+                            <li id="product1-feature4">Wi-Fi Connectivity</li>
+                        </ul>
+                        <a href="#" id="product1-cta" class="cta-button">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🚗</div>
+                    <div class="product-content">
+                        <h3 id="product2-title">Compact Dashcam Mini</h3>
+                        <p id="product2-desc">Discreet design with excellent video quality and easy installation.</p>
+                        <ul class="product-features">
+                            <li id="product2-feature1">1080p Full HD</li>
+                            <li id="product2-feature2">Wide-Angle Lens</li>
+                            <li id="product2-feature3">Loop Recording</li>
+                            <li id="product2-feature4">Motion Detection</li>
+                        </ul>
+                        <a href="#" id="product2-cta" class="cta-button">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">🛡️</div>
+                    <div class="product-content">
+                        <h3 id="product3-title">Dual Lens Dashcam</h3>
+                        <p id="product3-desc">Front and rear recording for complete coverage of your vehicle.</p>
+                        <ul class="product-features">
+                            <li id="product3-feature1">Dual 1080p Cameras</li>
+                            <li id="product3-feature2">Parking Mode</li>
+                            <li id="product3-feature3">G-Sensor</li>
+                            <li id="product3-feature4">Super Capacitor</li>
+                        </ul>
+                        <a href="#" id="product3-cta" class="cta-button">Buy Now</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Dashcam Test. <span id="footer-text">All rights reserved.</span></p>
+        </footer>
+    </div>
 
     <script>
         // Content for different languages
@@ -426,20 +440,23 @@
 
         // Initialize the page
         async function initPage() {
-            // Show loading state
-            document.body.innerHTML = `
-                <div class="loading">
-                    <div class="spinner"></div>
-                    <span>Detecting your location...</span>
-                </div>
-            `;
-            
-            // Detect user location and set content
-            const userLocation = await detectUserLocation();
-            setLocalizedContent(userLocation);
-            
-            // Reload the actual content
-            location.reload();
+            try {
+                // Detect user location
+                const userLocation = await detectUserLocation();
+                
+                // Set the localized content
+                setLocalizedContent(userLocation);
+                
+                // Hide loading screen and show main content
+                document.getElementById('loadingScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+            } catch (error) {
+                console.error('Error initializing page:', error);
+                // If there's an error, default to US content
+                setLocalizedContent('US');
+                document.getElementById('loadingScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+            }
         }
 
         // Initialize the page when it loads
